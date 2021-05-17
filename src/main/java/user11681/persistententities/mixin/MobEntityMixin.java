@@ -1,7 +1,7 @@
 package user11681.persistententities.mixin;
 
+import java.util.Random;
 import net.minecraft.entity.mob.MobEntity;
-import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
@@ -18,11 +18,10 @@ abstract class MobEntityMixin {
     }
 
     @Redirect(method = "checkDespawn",
-              at = @At(value = "FIELD",
-                       opcode = Opcodes.GETFIELD,
-                       target = "Lnet/minecraft/entity/mob/MobEntity;despawnCounter:I",
+              at = @At(value = "INVOKE",
+                       target = "Ljava/util/Random;nextInt(I)I",
                        ordinal = 0))
-    public int disableDespawn(MobEntity entity) {
-        return PersistentEntitiesConfiguration.instance.disableMobs ? -1 : entity.getDespawnCounter();
+    public int disableDespawn(Random random, int bound) {
+        return PersistentEntitiesConfiguration.instance.disableMobs ? -1 : random.nextInt(bound);
     }
 }

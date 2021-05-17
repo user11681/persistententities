@@ -8,7 +8,8 @@ version = "0.0.2"
 dependencies {
     modInclude("api-base")
     modInclude("api-resource-loader:0.3.1+")
-    modInclude("api-screen")
+
+    mod("api-screen")
 
     bloatedInclude("auto-config")
     bloatedInclude("cloth-config:4+")

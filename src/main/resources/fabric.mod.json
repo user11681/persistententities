@@ -17,7 +17,7 @@
             "user11681.persistententities.config.PersistentEntitiesConfiguration"
         ],
         "modmenu": [
-            "user11681.persistententities.integration.PersistentEntitiesModMenuIntegration"
+            "user11681.persistententities.config.PersistentEntitiesConfiguration$ModMenuIntegration"
         ]
     },
     "mixins": [
