@@ -9,6 +9,8 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.Config.Gui.Background;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry.Gui.Excluded;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry.Gui.Tooltip;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.Toml4jConfigSerializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.gui.screen.Screen;
 
@@ -32,6 +34,7 @@ public class PersistentEntitiesConfiguration implements ConfigData, ModInitializ
         instance = AutoConfig.register(PersistentEntitiesConfiguration.class, Toml4jConfigSerializer::new).get();
     }
 
+    @Environment(EnvType.CLIENT)
     public static class ModMenuIntegration implements ModMenuApi {
         @Override
         public ConfigScreenFactory<?> getModConfigScreenFactory() {

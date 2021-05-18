@@ -1,7 +1,7 @@
 {
     "schemaVersion": 1,
     "id": "persistententities",
-    "version": "0.0.0",
+    "version": "${version}",
     "name": "persistent entities",
     "description": "a mod that makes entity despawn times configurable",
     "authors": [
