@@ -1,5 +1,5 @@
 plugins {
-    id("wheel").version("0-SNAPSHOT")
+    id("wheel-fabric").version("latest.integration")
 }
 
 group = "user11681"
@@ -7,12 +7,12 @@ version = "0.0.3"
 
 dependencies {
     modInclude("api-base")
-    modInclude("api-resource-loader:0.3.1+")
+    modInclude("api-resource-loader")
 
     mod("api-screen")
 
     bloatedInclude("auto-config")
-    bloatedInclude("cloth-config:4+")
+    bloatedInclude("cloth-config")
 
     intransitive("mod-menu")
 }
